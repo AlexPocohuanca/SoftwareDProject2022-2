@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Alumnos</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index">Home</a></li>
+          <li class="breadcrumb-item">Admin</li>
+          <li class="breadcrumb-item active">Alumnos</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Listado de alumnos</h5>
+              <p>Aquí se muestran todos los alumnos de la clase elegida</p>
+
+              <!-- Table with stripped rows -->
+              <table class="table datatable">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Físico</th>
+                    <th scope="col">Cognitivo</th>
+                    <th scope="col">Emocional</th>
+                    <th scope="col">Social</th>
+                    <th scope="col">Necesidad de intervención</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- reemplazar login con bd de alumnos-->
+                  {% for c in login %}
+                  <tr>
+                      <td> {{ c.0 }} </td>
+                      <td> {{ c.1 }} </td>
+                      <td> {{ c.2 }} </td>
+                      <td> {{ c.3 }} </td>
+                      <td> {{ c.4 }} </td>
+                      <td> {{ c.5 }} </td>
+                      <td> {{ c.6 }} </td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+  {% endblock %}    

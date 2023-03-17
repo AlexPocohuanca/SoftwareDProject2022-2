@@ -1,0 +1,191 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<main id="main" class="main">
+
+	<div class="pagetitle">
+		<h1>Subir datos</h1>
+		<nav>
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="index">Home</a></li>
+				<li class="breadcrumb-item">Upload</li>
+				<li class="breadcrumb-item active">Videos</li>
+			</ol>
+		</nav>
+	</div><!-- End Page Title -->
+
+	<section class="section">
+		<div class="row">
+			<div class="col-lg-6">
+
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Analizar Grabacion de clase</h5>
+
+						<!-- General Form Elements -->
+						<form action="/uploadVideo" method="post" enctype="multipart/form-data">
+							<div class="row mb-3">
+								<label for="inputText" class="col-sm-2
+									col-form-label">Nombre</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control"
+									name="some_text">
+								</div>
+							</div>
+
+							<div class="row mb-3">
+								<label for="inputNumber" class="col-sm-2
+									col-form-label">Archivo de video</label>
+								<div class="col-sm-10">
+									<input class="form-control" type="file"
+									id="formFile" name="file">
+								</div>
+							</div>
+							<div class="row mb-3">
+								<label for="inputDate" class="col-sm-2 col-form-label">Date</label>
+								<div class="col-sm-10">
+									<input type="date" class="form-control">
+								</div>
+							</div>
+
+							<div class="row mb-3">
+								<label class="col-sm-2 col-form-label">Curso</label>
+								<div class="col-sm-10">
+									<select class="form-select" aria-label="Default select example" name = "curso">
+										<option selected>Elegir curso</option>
+										<option value="1">Introducción a Cognitive Computing</option>
+										<option value="2">Diseño de Software</option>
+										<option value="3">Introducción a
+										Ciencias de la Computación</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="row mb-3">
+								<div class="col-sm-10">
+									<button type="submit" class="btn btn-primary">Enviar</button>
+								</div>
+							</div>
+
+						</form><!-- End General Form Elements -->
+
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Analizar Registro de Asistencia</h5>
+
+						<!-- General Form Elements -->
+						<form action="/uploadCsvAttendance" method="post" enctype="multipart/form-data">
+							<div class="row mb-3">
+								<label for="inputText" class="col-sm-2
+									col-form-label">Nombre</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control"
+									name="some_text">
+								</div>
+							</div>
+
+							<div class="row mb-3">
+								<label for="inputNumber" class="col-sm-2
+									col-form-label">Archivo CSV</label>
+								<div class="col-sm-10">
+									<input class="form-control" type="file"
+									id="formFile" name="file">
+								</div>
+							</div>
+							<div class="row mb-3">
+								<label for="inputDate" class="col-sm-2 col-form-label">Date</label>
+								<div class="col-sm-10">
+									<input type="date" class="form-control">
+								</div>
+							</div>
+
+							<div class="row mb-3">
+								<label class="col-sm-2 col-form-label">Curso</label>
+								<div class="col-sm-10">
+									<select class="form-select" aria-label="Default select example">
+										<option selected>Elegir curso</option>
+										<option value="1">Introducción a Cognitive Computing</option>
+										<option value="2">Diseño de Software</option>
+										<option value="3">Introducción a
+										Ciencias de la Computación</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="row mb-3">
+								<div class="col-sm-10">
+									<button type="submit" class="btn btn-primary">Enviar</button>
+								</div>
+							</div>
+
+						</form><!-- End General Form Elements -->
+
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Analizar Registro de Notas</h5>
+
+						<!-- General Form Elements -->
+						<form action="/uploadCsvGrades" method="post" enctype="multipart/form-data">
+							<div class="row mb-3">
+								<label for="inputText" class="col-sm-2
+									col-form-label">Nombre</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control"
+									name="some_text">
+								</div>
+							</div>
+
+							<div class="row mb-3">
+								<label for="inputNumber" class="col-sm-2
+									col-form-label">Archivo CSV</label>
+								<div class="col-sm-10">
+									<input class="form-control" type="file"
+									id="formFile" name="file">
+								</div>
+							</div>
+							<div class="row mb-3">
+								<label for="inputDate" class="col-sm-2 col-form-label">Date</label>
+								<div class="col-sm-10">
+									<input type="date" class="form-control">
+								</div>
+							</div>
+
+							<div class="row mb-3">
+								<label class="col-sm-2 col-form-label">Curso</label>
+								<div class="col-sm-10">
+									<select class="form-select" aria-label="Default select example">
+										<option selected>Elegir curso</option>
+										<option value="1">Introducción a Cognitive Computing</option>
+										<option value="2">Diseño de Software</option>
+										<option value="3">Introducción a
+										Ciencias de la Computación</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="row mb-3">
+								<div class="col-sm-10">
+									<button type="submit" class="btn btn-primary">Enviar</button>
+								</div>
+							</div>
+
+						</form><!-- End General Form Elements -->
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+</main><!-- End #main -->
+
+{% endblock %} 

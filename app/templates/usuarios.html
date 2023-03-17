@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Usuarios DB</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index">Home</a></li>
+          <li class="breadcrumb-item">Admin</li>
+          <li class="breadcrumb-item active">Usuarios DB</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Videos Uploaded Database</h5>
+              <p>Aqui se muestran todos los usuarios registrados en la plataforma</p>
+
+              <!-- Table with stripped rows -->
+              <table class="table datatable">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Company</th>
+                    <th scope="col">Position</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for c in login %}
+                  <tr>
+                      <td> {{ c.0 }} </td>
+                      <td> {{ c.1 }} </td>
+                      <td> {{ c.2 }} </td>
+                      <td> {{ c.3 }} </td>
+                      <td> {{ c.4 }} </td>
+                      <td> {{ c.5 }} </td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+  {% endblock %}    

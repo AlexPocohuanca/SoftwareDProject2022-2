@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Conductores</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index">Home</a></li>
+          <li class="breadcrumb-item active">Conductores</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+  
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+  
+          <div class="card">
+            
+            <div class="card-body">
+              <h5 class="card-title">Tabla de conductores con registros</h5>
+              
+              <p>Aquí se muestran los conductores pertenecientes a su empresa con al menos un registro de incidente.</p>
+  
+              <!-- Table with stripped rows -->
+              <table class="table datatable">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Empresa</th>
+                    <th scope="col">Activo</th>
+                    <th scope="col">ID de dispositivo</th>
+                    <th scope="col">Número de incidentes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for c in conductoresreg %}
+                  <tr>
+                      <td> {{ c.0 }} </td>
+                      <td> {{ c.1 }} </td>
+                      <td> {{ c.2 }} </td>
+                      <td> {{session['companyname']}} </td>
+                      <td> {{ c.4 }} </td>
+                      <td> {{ c.5 }} </td>
+                      <td> {{ c.6 }} </td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
+  
+            </div>
+            
+            <div class="card-body">
+              <h5 class="card-title">Tabla de conductores totales</h5>
+
+              <p>Aquí se muestran todos los conductores pertenecientes a su empresa.</p>
+  
+              <!-- Table with stripped rows -->
+              <table class="table datatable">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Empresa</th>
+                    <th scope="col">Activo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for c in conductorestot %}
+                  <tr>
+                      <td> {{ c.0 }} </td>
+                      <td> {{ c.1 }} </td>
+                      <td> {{ c.2 }} </td>
+                      <td> {{session['companyname']}} </td>
+                      <td> {{ c.4 }} </td>
+
+                  </tr>
+                  {% endfor %}
+              </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </section>
+  
+  </main><!-- End #main -->
+
+{% endblock %}
